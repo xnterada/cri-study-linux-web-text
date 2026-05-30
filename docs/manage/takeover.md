@@ -15,8 +15,7 @@
 
 ### AWS CLIのインストールと設定
 
-以下の手順でAWS CLIをインストールし、認証設定を行う。
-https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html
+以下の手順でAWS CLIをインストールし、認証設定を行う。[公式ドキュメント](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html)を参考にすること。
 
 認証設定にはconfigureコマンドを使用して、AWSアクセスキーIDとシークレットアクセスキーを入力する。
 ```bash
@@ -26,13 +25,11 @@ TerraformとPackerもこのクレデンシャルファイルを使用してAWS�
 
 ### Terraformのインストール
 
-自身のOSに合わせてTerraformを以下の手順を参考にインストールする。
-https://developer.hashicorp.com/terraform/install
+自身のOSに合わせてTerraformを[公式ドキュメント](https://developer.hashicorp.com/terraform/install)を参考にインストールする。
 
 ## Packerのインストール
 
-自身のOSに合わせてPackerを以下の手順を参考にインストールする。
-https://developer.hashicorp.com/packer/install
+自身のOSに合わせてPackerを[公式ドキュメント](https://developer.hashicorp.com/packer/install)を参考にインストールする。
 
 ## リポジトリのクローンと自分のGitHubアカウントへのフォーク
 以下のリポジトリをクローンし、自分のGitHubアカウントにコピーする。
