@@ -52,6 +52,9 @@ Packerを使用して、アプリを起動するEC2インスタンス用のAMI�
 Terraformを使用して、アプリインフラを構築する。
 詳細は[Terraformリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-infla-sample)のREADMEを参照。
 
+#### インフラ構成図
+![インフラ構成図](./images/infrastructure_diagram.png)
+
 ## 3. アプリデプロイ
 GitHub Actionsを使用して、アプリをデプロイする。
 詳細は[アプリリポジトリ](https://github.com/xnterada/cri-study-linux-web-app)のREADMEを参照。
