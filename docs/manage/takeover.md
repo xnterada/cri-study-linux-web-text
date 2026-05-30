@@ -1,31 +1,30 @@
 # カリキュラム引継ぎ資料
 
-## 用意するもの
+本資料は、Linuxカリキュラム用アプリの引継ぎを目的としています。
 
-- AWSアカウント
-- IAMユーザ（管理者権限を付与しておくこと）
-- ドメイン（Route53で取得を推奨。「.click」ドメインが安価でおすすめ）
-- ホストゾーン（Route53で作成しておくこと）
-- DBバックアップファイル
+## 1. 事前準備
 
-## AWS CLIのインストールと設定
+### 用意するもの
+
+1. AWSアカウント
+2. IAMユーザ（管理者権限を付与しておくこと）
+3. ドメイン（Route53で取得を推奨。「.click」ドメインが安価でおすすめ）
+4. ホストゾーン（Route53で作成しておくこと）
+5. GitHubアカウント（ソースコード管理とCDに使用）
+6. DBバックアップファイル（前任者から提供します）
+
+### AWS CLIのインストールと設定
 
 以下の手順でAWS CLIをインストールし、認証設定を行う。
 https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/getting-started-install.html
 
-## AWS CLI認証設定
-
-AWSのリソースにアクセスするためにクレデンシャル設定を行う。
+認証設定にはconfigureコマンドを使用して、AWSアクセスキーIDとシークレットアクセスキーを入力する。
+```bash
+aws configure
+```
 TerraformとPackerもこのクレデンシャルファイルを使用してAWSリソースにアクセス可能となる。
 
-```bash
-mkdir -p ~/.aws
-echo "[default]" > ~/.aws/credentials
-echo "aws_access_key_id = YOUR_ACCESS_KEY_ID" >> ~/.aws/credentials
-echo "aws_secret_access_key = YOUR_SECRET_ACCESS_KEY" >> ~/.aws/credentials
-```
-
-## Terraformのインストール
+### Terraformのインストール
 
 自身のOSに合わせてTerraformを以下の手順を参考にインストールする。
 https://developer.hashicorp.com/terraform/install
@@ -34,3 +33,28 @@ https://developer.hashicorp.com/terraform/install
 
 自身のOSに合わせてPackerを以下の手順を参考にインストールする。
 https://developer.hashicorp.com/packer/install
+
+## リポジトリのクローンと自分のGitHubアカウントへのフォーク
+以下のリポジトリをクローンし、自分のGitHubアカウントにコピーする。
+（注意）この資料内での「コピー」とは、自分のローカルにクローンした後、.gitディレクトリを削除してから、自分のGitHubアカウントに新規リポジトリを作成し、そこにコードをプッシュすることを指すこととする。
+
+- [テキスト教材リポジトリ](https://github.com/xnterada/cri-study-linux-web-text)
+- [アプリリポジトリ](https://github.com/xnterada/cri-study-linux-web-app)
+- [AMIリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-ami-sample)
+- [Terraformリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-infla-sample)
+
+再プッシュするときは「-sample」のサフィックスを消すなど、自由にリポジトリ名を変更してもらって構わない。
+
+## 2. インフラ構築
+
+### PackerでAMIを作成
+Packerを使用して、アプリを起動するEC2インスタンス用のAMIを作成する。
+詳細は[AMIリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-ami-sample)のREADMEを参照。
+
+### Terraformでインフラ構築
+Terraformを使用して、アプリインフラを構築する。
+詳細は[Terraformリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-infla-sample)のREADMEを参照。
+
+## 3. アプリデプロイ
+GitHub Actionsを使用して、アプリをデプロイする。
+詳細は[アプリリポジトリ](https://github.com/xnterada/cri-study-linux-web-app)のREADMEを参照。
