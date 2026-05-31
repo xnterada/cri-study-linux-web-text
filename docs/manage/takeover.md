@@ -21,18 +21,19 @@
 ```bash
 aws configure
 ```
-TerraformとPackerもこのクレデンシャルファイルを使用してAWSリソースにアクセス可能となる。
+TerraformとPackerもこのコマンドで生成される`~/.aws/credentials`を使用してAWSリソースにアクセス可能となる。
 
 ### Terraformのインストール
 
 自身のOSに合わせてTerraformを[公式ドキュメント](https://developer.hashicorp.com/terraform/install)を参考にインストールする。
 
-## Packerのインストール
+### Packerのインストール
 
 自身のOSに合わせてPackerを[公式ドキュメント](https://developer.hashicorp.com/packer/install)を参考にインストールする。
 
-## リポジトリのクローンと自分のGitHubアカウントへのフォーク
+### リポジトリのクローンと自分のGitHubアカウントへのコピー
 以下のリポジトリをクローンし、自分のGitHubアカウントにコピーする。
+
 （注意）この資料内での「コピー」とは、自分のローカルにクローンした後、.gitディレクトリを削除してから、自分のGitHubアカウントに新規リポジトリを作成し、そこにコードをプッシュすることを指すこととする。
 
 - [テキスト教材リポジトリ](https://github.com/xnterada/cri-study-linux-web-text)
@@ -51,9 +52,13 @@ Packerを使用して、アプリを起動するEC2インスタンス用のAMI�
 ### Terraformでインフラ構築
 Terraformを使用して、アプリインフラを構築する。
 詳細は[Terraformリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-infla-sample)のREADMEを参照。
+複数のルートモジュールがあり、順序性があるため、手順に従って実行すること。
 
-#### インフラ構成図
+#### インフラ構成図（参考）
 ![インフラ構成図](./arch_r1.drawio.png)
+上記の構成図で表現していないものについて、以下に補足する。
+- 実際はS3バケットが複数存在するが、図では1つのS3バケットで表現している。
+- GitHub Actionsでのデプロイの際に、CloudFrontで配信する静的ファイルもS3バケットにアップロードしている。
 
 ## 3. アプリデプロイ
 GitHub Actionsを使用して、アプリをデプロイする。
