@@ -36,10 +36,10 @@ TerraformとPackerもこのコマンドで生成される`~/.aws/credentials`を
 
 （注意）この資料内での「コピー」とは、自分のローカルにクローンした後、.gitディレクトリを削除してから、自分のGitHubアカウントに新規リポジトリを作成し、そこにコードをプッシュすることを指すこととする。
 
-- [テキスト教材リポジトリ](https://github.com/xnterada/cri-study-linux-web-text)
-- [アプリリポジトリ](https://github.com/xnterada/cri-study-linux-web-app)
-- [AMIリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-ami-sample)
-- [Terraformリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-infla-sample)
+- [テキスト教材リポジトリ](https://github.com/nzmdesign/cri-study-linux-web-text)
+- [アプリリポジトリ](https://github.com/nzmdesign/cri-study-linux-web-app)
+- [AMIリポジトリ](https://github.com/nzmdesign/cri-study-linux-web-app-ami-sample)
+- [Terraformリポジトリ](https://github.com/nzmdesign/cri-study-linux-web-app-infla-sample)
 
 再プッシュするときは「-sample」のサフィックスを消すなど、自由にリポジトリ名を変更してもらって構わない。
 
@@ -47,11 +47,11 @@ TerraformとPackerもこのコマンドで生成される`~/.aws/credentials`を
 
 ### PackerでAMIを作成
 Packerを使用して、アプリを起動するEC2インスタンス用のAMIを作成する。
-詳細は[AMIリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-ami-sample)のREADMEを参照。
+詳細は[AMIリポジトリ](https://github.com/nzmdesign/cri-study-linux-web-app-ami-sample)のREADMEを参照。
 
 ### Terraformでインフラ構築
 Terraformを使用して、アプリインフラを構築する。
-詳細は[Terraformリポジトリ](https://github.com/xnterada/cri-study-linux-web-app-infla-sample)のREADMEを参照。
+詳細は[Terraformリポジトリ](https://github.com/nzmdesign/cri-study-linux-web-app-infla-sample)のREADMEを参照。
 複数のルートモジュールがあり、順序性があるため、手順に従って実行すること。
 
 #### インフラ構成図（参考）
@@ -62,4 +62,4 @@ Terraformを使用して、アプリインフラを構築する。
 
 ## 3. アプリデプロイ
 GitHub Actionsを使用して、アプリをデプロイする。
-詳細は[アプリリポジトリ](https://github.com/xnterada/cri-study-linux-web-app)のREADMEを参照。
+詳細は[アプリリポジトリ](https://github.com/nzmdesign/cri-study-linux-web-app)のREADMEを参照。

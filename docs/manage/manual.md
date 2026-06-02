@@ -40,7 +40,3 @@
    詳細については、https://aka.ms/enablevirtualization をご覧ください
    エラー コード : Wsl/InstallDistro/Service/RegisterDistro/CreateVm/HCS/HCS_E_HYPERV_NOT_INSTALLED
    ```
-
-## お問い合わせ
-
-運用に困った場合は、Slackで寺田（terada_no-DS）までDMしてください。
